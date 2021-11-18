@@ -1,0 +1,11 @@
+ALPHABET "RNA seq-struct-8"
+
+#Core symbols
+A "A-U"
+B "A-P"
+C "C-U"
+D "C-P"
+E "G-U"
+F "G-P"
+G "U-U"
+H "U-P"

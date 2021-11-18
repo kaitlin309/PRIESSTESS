@@ -1,0 +1,5 @@
+ALPHABET "RNA struct-2"
+
+#Core symbols
+U "Unpaired"
+P "Paired"

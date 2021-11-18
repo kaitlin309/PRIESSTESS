@@ -1,0 +1,10 @@
+ALPHABET "RNA struct-7"
+
+#Core symbols
+B "Bulge"
+E "External"
+H "Hairpin"
+L "Left"
+M "Multiloop"
+R "Right"
+T "Internal loop"

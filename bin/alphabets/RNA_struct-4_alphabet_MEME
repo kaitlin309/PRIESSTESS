@@ -1,0 +1,7 @@
+ALPHABET "RNA struct-4"
+
+#Core symbols
+P "Paired"
+L "Hairpin loop"
+U "Unstructured Unpaired"
+M "Multiloop Internal loop Bulge"
