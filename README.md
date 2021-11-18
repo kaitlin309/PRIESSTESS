@@ -84,3 +84,27 @@ Alphabets annotations:
   
 ### Scanning with a PRIESSTESS model 
 
+  `PRIESSTESS_scan -fg foreground_file -bg background_file [OPTIONS]`
+
+The foreground_file and background_file must contain 1 probe sequence per line containing only characters A, C, G, U and N. Files must be either uncompressed or gzipped. To convert a fasta to the correct format use:
+  
+  `awk 'NR%2==0' fasta_file.fa > correct_format.txt`
+
+#### OPTIONS
+
+  `-h, --help`  Print help and exit
+
+  `-p`          Path to PRIESSTESS_output directory containing the model to apply to the test data. Default: ./PRIESSTESS_output
+  
+  `-testName`   A name to use when creating directories and files with results. Ex. K562_RBFOX2_clip    Default: test_data
+
+  `-f5`         5' constant flanking sequence to be added to 5' end of all probes in fg and bg files OR if -flanksIn flag is used can also be a number. Ex: GGAUUGUAACCUAUCUGUA OR 19    Default: None
+
+  `-f3`         3' constant flanking sequence to be added to 3' end of all probes in fg and bg files OR if -flanksIn flag is used can also be a number. Ex: GGAUUGUAACCUAUCUGUA OR 19    Default: None
+
+  `-flanksIn`   Indcates that 5' and 3' constant flanking sequences defined above are included in the probe sequences (-fg and -bg files). If the flag is not used, the flanks defined by -f5 and -f3 will be added by PRIESSTESS.
+
+  `-t`          Folding temperature - passed to RNAfold. Default: 37
+
+  `-noCleanup`  Do not remove intermediate files created by PRIESSTESS. If this flag is not used intermediate files will be removed after usage
+
