@@ -44,7 +44,7 @@ This is a structure-only annotation that differentiates between 3 different type
 P - paired\
 L - hairpin loop\
 U - external\
-M - multi-loop / internal loop / bulge
+M - other loops (multi-loop / internal loop / bulge)
 
 ### struct-7
 This is a structure-only annotation that differentiates 7 different types of structure.
