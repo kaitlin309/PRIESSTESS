@@ -2,11 +2,11 @@
 
 Motifs with non-zero weights in each PRIESSTESS model trained for Laverty *et al.* 2022 are contained within this directory. The subdirectory contents are as follows:
 
-| Directory             | Contents                                                        |
-| --------------------- | --------------------------------------------------------------- |
-| RBNS_motifs           | PFMs from models trained on RNA Bind-n-Seq datasets             |
-| HTRSELEX_Jolma_motifs | PFMs from models trained on all HTRSELEX from Jolma et al. 2020 |
-| benchmarking_motifs   | PFMs from models trained on the benchmarking data               |
+| Directory                     | Contents                                                        |
+| ----------------------------- | --------------------------------------------------------------- |
+| `RBNS_motifs`                 | PFMs from models trained on RNA Bind-n-Seq datasets             |
+| `HTRSELEX_Jolma_motifs`       | PFMs from models trained on all HTRSELEX from Jolma et al. 2020 |
+| `benchmarking_dataset_motifs` | PFMs from models trained on the benchmarking data               |
 
 File names describe the experiment identifier, the alphabet annotation of the PFM, the rank of significance of the PFM as discovered by STREME, and the weight of the PFM as a feature in the LR model.
 
