@@ -14,9 +14,7 @@ flank5=""                             # -f5
 flank3=""                             # -f3
 flanks_included="FALSE"	              # -flanksIn
 temp=37                               # -t
-N=1                                   # -N
-N_score=4                             # -scoreN
-clean="TRUE"		              # -noCleanup
+clean="TRUE"		                  # -noCleanup
 
 # Read in arguments and save
 while test $# -gt 0; do
