@@ -574,8 +574,8 @@ if [[ $N -lt 1000 ]]; then
     N=1000000000
     for f in fg_alphabet_annotations.tab bg_alphabet_annotations.tab; do
         n1=`cat $f | wc -l`
-        if [[ $n1 -lt $n ]]; then
-            n=$n1
+        if [[ $n1 -lt $N ]]; then
+            N=$n1
         fi
     done
 fi
@@ -633,7 +633,7 @@ for a in `cut -f 2- annotation_alphabets_header.tab | head -1 | tr '\t' ' '`; do
     # 23 hour time cutoff so that each will never take more than 1 day
     # However, it is unlikely that it would unless there are millions 
     # of long probes
-    streme -verbosity 1 -oc . -alph ${libpath}/alphabets/RNA_${a}_alphabet_MEME -p fg_STREME.fa -n bg_STREME.fa -pvt 0.01 --time 82800 -minw $min_width -maxw $max_width
+    streme -verbosity 1 -oc . -alph ${libpath}/alphabets/RNA_${a}_alphabet_MEME -p fg_STREME.fa -n bg_STREME.fa -pvt 0.01 -minw $min_width -maxw $max_width
     # Find number of resulting motifs
     n=`grep MOTIF streme.txt | wc -l`
     # The last three motifs never meet the pvalue cutoff
