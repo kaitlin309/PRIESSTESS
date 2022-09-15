@@ -22,6 +22,8 @@ sklearn (PRIESSTESS was developed with version 0.23.2)
 
 skopt python package (PREISSTESS was developed with version  0.8.1)
 
+**Note: A user of PRIESSTESS found that it would run only when the version of sklearn was dropped to 0.22.** See Issue: [#2](/../../issues/2)
+
 ## Usage
 
 ### Train a PRIESSTESS model 
