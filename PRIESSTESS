@@ -457,6 +457,12 @@ if [ ! -f ${out_dir}/bg_seqs.txt ]; then
     exit 1
 fi
 
+# Deal with windows carriage returns
+sed 's/\r//g' fg_seqs.txt > fg.tmp
+mv -f fg.tmp fg_seqs.txt
+sed 's/\r//g' bg_seqs.txt > bg.tmp
+mv -f bg.tmp bg_seqs.txt
+
 currdir=`pwd`
 # Move into output directory
 cd $out_dir
