@@ -18,6 +18,8 @@ STREME (PREISSTESS was developed with version  5.3.0)
 
 python3 (PREISSTESS was developed with version 3.8)
 
+sklearn (PRIESSTESS was developed with version 0.23.2)
+
 skopt python package (PREISSTESS was developed with version  0.8.1)
 
 ## Usage
