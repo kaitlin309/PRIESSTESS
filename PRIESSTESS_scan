@@ -363,7 +363,7 @@ for c in `cut -f 2- ../annotation_alphabets_header.tab | tail -n 1 | tr '\t' ' '
 done;
 
 # Get scoreN value
-Nscore=`grep "^scoreN" ../arguments.txt | cut -f 2`
+Nscore=`grep "^scoreN" ../PRIESSTESS_arguments.txt | cut -f 2 -d ' '`
 
 # Scan probes with PFMs from each alphabet
 for a in `cut -f 2- ../annotation_alphabets_header.tab | head -1 | tr '\t' ' '`; do
