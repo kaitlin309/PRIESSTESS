@@ -4,7 +4,7 @@ PRIESSTESS (Predictive RBP-RNA InterpretablE Sequence-Structure moTif regrESSion
 
 PRIESSTESS consists of two steps. The first step generates a large collection of enriched motifs encompassing both RNA sequence and structure. The second step produces an aggregate model, which combines the motif scores into a single value, and gauges the relative importance of each motif. 
 
-Laverty, K.U., Jolma, A., Pour, S., Zheng, H., Ray, D., Morris, Q.D., Hughes, T.R. PRIESSTESS: interpretable, high-performing models of the sequence and structure preferences of RNA binding proteins. 
+Laverty, K.U., Jolma, A., Pour, S.E., Zheng, H., Ray, D., Morris, Q.D., Hughes, T.R. PRIESSTESS: interpretable, high-performing models of the sequence and structure preferences of RNA binding proteins. *Nucleic Acids Research*. 2022 https://doi.org/10.1093/nar/gkac694
 
 ## Installation
 
