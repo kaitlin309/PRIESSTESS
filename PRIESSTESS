@@ -660,7 +660,17 @@ for a in `cut -f 2- annotation_alphabets_header.tab | head -1 | tr '\t' ' '`; do
         for i in `seq 1 $n`; do 
             # Get width and p-value of motif
             mwidth=`grep -A 1 "MOTIF ${i}-" streme.txt | grep -o "w=[ 0-9]*" | grep -o [0-9]`
-            pval=`grep -A 1 "MOTIF ${i}-" streme.txt | grep -o "P=[ e.0-9-]*" | grep -o "[e\.0-9-]*"`
+	    # Check if p-value or e-value available based on STREME version
+	    ppresent=`grep -A 1 "MOTIF ${i}-" streme.txt | grep -o " P=" | wc -c`
+	    if [ $ppresent -lt 2 ]; then 
+	        # E-value available, calculate p-value
+	        evalue=`grep -A 1 "MOTIF ${i}-" streme.txt | grep -o "E=[ e.0-9-]*" | grep -o "[e\.0-9-]*"`
+                nsites=`grep -A 1 "MOTIF ${i}-" streme.txt | grep -o "nsites= [0-9]*" | grep -o "[0-9]*"`
+                pval=$(awk "BEGIN { print $evalue / $nsites }")
+	    else
+	        # P-value available
+                pval=`grep -A 1 "MOTIF ${i}-" streme.txt | grep -o "P=[ e.0-9-]*" | grep -o "[e\.0-9-]*"`
+	    fi
             # Get log pvalue for comparison to cutoff
             logpval=`python ${libpath}/utils/log2_scinot.py $pval`
             # If pvalue passes cutoff save motif
