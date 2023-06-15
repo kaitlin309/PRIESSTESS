@@ -513,12 +513,22 @@ else
     fi;
 fi;
 
-# Fold the full probe sequences for foreground and background 
-# and return files with all 7 probe annotations plus a "name"
-# for each probe
-# This file returns a file called ${prefix}_alphabet_annotations.tab
-${libpath}/fold_and_annotate.sh fg_seqs.txt $libpath fg $temp $clean
-${libpath}/fold_and_annotate.sh bg_seqs.txt $libpath bg $temp $clean
+# If user only wants to search for sequence motifs, don't fold
+if [ $alphs == "1" ]; then 
+    for p in fg bg; do 
+        nrow=`cat ${p}_seqs.txt | wc -l`
+        seq 1 $nrow | paste - ${p}_seqs.txt > tmp.tmp
+        sed "s/^/${p}_/" tmp.tmp > ${p}_alphabet_annotations.tab
+        rm -f tmp.tmp
+    done;
+else
+    # Fold the full probe sequences for foreground and background 
+    # and return files with all 7 probe annotations plus a "name"
+    # for each probe
+    # This file returns a file called ${prefix}_alphabet_annotations.tab
+    ${libpath}/fold_and_annotate.sh fg_seqs.txt $libpath fg $temp $clean
+    ${libpath}/fold_and_annotate.sh bg_seqs.txt $libpath bg $temp $clean
+fi;
 
 # Reduce alphabet annotations down to those requested by the user
 # Identify which alphabets are needed and extract those columns
