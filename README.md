@@ -12,15 +12,15 @@ Download PRIESSTESS and add path to main directory to bash profile. Ensure that 
 
 ### Requirements
 
-RNAfold (PREISSTESS was developed with version  2.4.11)
+RNAfold (PRIESSTESS was developed with version  2.4.11)
 
-STREME (PREISSTESS was developed with version  5.3.0)
+STREME (PRIESSTESS was developed with version  5.3.0)
 
-python3 (PREISSTESS was developed with version 3.8)
+python3 (PRIESSTESS was developed with version 3.8)
 
 sklearn (PRIESSTESS was developed with version 0.23.2)
 
-skopt python package (PREISSTESS was developed with version  0.8.1)
+skopt python package (PRIESSTESS was developed with version  0.8.1)
 
 **Note: A user of PRIESSTESS found that it would run only when the version of sklearn was dropped to 0.22.** See Issue: [#2](/../../issues/2)
 
