@@ -17,8 +17,22 @@ test_name = sys.argv[4]
 trainset = np.loadtxt(trainfile, delimiter='\t', skiprows=1)
 testset = np.loadtxt(testfile, delimiter='\t', skiprows=1)
 
+# Get column names
+with open(trainfile) as f:
+    traincols=next(f)
+traincols = np.array(traincols.strip().split('\t')[1:])
+with open(testfile) as f:
+    testcols=next(f)
+testcols = np.array(testcols.strip().split('\t')[1:])
+
+indmask = []
+for i in traincols:
+    indmask.append(np.where(testcols == i)[0][0])
+indmask = np.array(indmask)
+
 Xtrain = trainset[:, 1:len(trainset[0])]
 Xtest = testset[:, 1:len(testset[0])]
+Xtest = Xtest[:, indmask]
 Ytest = testset[:, 0]
 
 # Scale test values to the same scale as training values
